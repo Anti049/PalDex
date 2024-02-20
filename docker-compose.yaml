@@ -1,0 +1,16 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    volumes:
+      - appdata:/config
+    ports:
+      - "5656:5656"
+  backend:
+    build: ./backend
+    volumes:
+      - appdata:/config
+    ports:
+      - "5657:5657"
+volumes:
+  appdata:
